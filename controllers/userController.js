@@ -29,13 +29,14 @@ module.exports={
 
     getAllRecords: async (req, res) => {
         try {
-            let result=await Models.usersModel.findAll()
-            return res.send(result)
+            let result = await Models.usersModel.findAll();
+            return res.json(result);
         } catch (error) {
-            console.log(error)
-            throw error
+            console.log(error);
+            return res.status(500).json({ error: 'An error occurred while fetching records.' }); // Optional: return error response
         }
-    }, 
+    },
+    
     updateSomeRecords: async (req, res) => {
         try {
             await Models.usersModel.update({name:req.body.name},{where:{id:req.body.id}})
