@@ -29,7 +29,7 @@ module.exports={
 
     getAllRecords: async (req, res) => {
         try {
-            let result=await Models.userModel.findAll()
+            let result=await Models.usersModel.findAll()
             return res.send(result)
         } catch (error) {
             console.log(error)
