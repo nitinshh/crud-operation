@@ -32,8 +32,8 @@ module.exports={
             let result = await Models.usersModel.findAll();
             return res.json(result);
         } catch (error) {
-            console.log(error);
-            return res.status(500).json({ error: 'An error occurred while fetching records.' }); // Optional: return error response
+            console.log(error)
+            throw error
         }
     },
     
