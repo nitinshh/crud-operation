@@ -11,7 +11,7 @@ require('./models/index')
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 const userRouter=require("./routers/userRouter")
-app.use("/users",userRouter)
+app.use("/api/users",userRouter)
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on ${PORT}`)
